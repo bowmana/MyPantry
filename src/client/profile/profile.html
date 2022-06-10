@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="profile.js" type="module" defer></script>
+    <title>Profile</title>
+  </head>
+  <body>
+    <nav class="navbar sticky-top">
+      <div class="container-sm">
+        <a class="navbar-brand" href="/">
+          <img src="../img/logo.png" width="110" height="62" alt="logo" />
+        </a>
+        <ul>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link px-0"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                class="profilePicture__rounded navbar__picture"
+                src="https://www.pngkey.com/png/full/503-5035055_a-festival-celebrating-tractors-profile-picture-placeholder-round.png"
+                alt="stock profile picture"
+                id="user-profile-picture"
+              />
+            </a>
+            <!-- Add correct link urls and fix dropdown style and background color -->
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a class="dropdown-item" href="../profile/" id="profile-button"
+                  >My Profile</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="../account/">Edit Profile</a>
+              </li>
+              <li><a class="dropdown-item" href="../login/">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="container-sm mt-3">
+      <div class="main-wrapper">
+        <div class="profile">
+          <div class="profile__controls">
+            <img
+              class="mb-3 profile__picture profilePicture__rounded"
+              id="profile-picture"
+              src="https://www.pngkey.com/png/full/503-5035055_a-festival-celebrating-tractors-profile-picture-placeholder-round.png"
+              alt="stock profile picture"
+            />
+            <p id="profile-username"></p>
+            <div class="nav flex-column mt-3" aria-orientation="vertical">
+              <button class="btn btn-primary active mb-1" id="beats-button">
+                Beats
+              </button>
+              <button class="btn btn-primary mb-1" id="songs-button">
+                Songs
+              </button>
+              <button class="btn btn-primary mb-1" id="comments-button">
+                Comments
+              </button>
+            </div>
+            <!-- <a class="link-light mb-4 profile_link link-active" href="">Beats</a>
+            <a class="link-light mb-4 profile_link" href="">Vocals</a>
+            <a class="link-light mb-4 profile_link" href="">Comments</a>
+            <a class="link-light mb-4 profile_link" href="">Liked</a> -->
+          </div>
+          <div class="profile__content">
+            <div class="controls">
+              <div
+                class="btn-group w-100 mb-3"
+                role="group"
+                aria-label="Basic example"
+              >
+                <button
+                  type="button"
+                  class="btn btn-primary active"
+                  id="top-button"
+                >
+                  Top
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="latest-button"
+                >
+                  Latest
+                </button>
+              </div>
+            </div>
+
+            <div class="feed" id="feed"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
