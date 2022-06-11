@@ -9,7 +9,7 @@ const add_new_button = document.getElementById("add-new");
 
 await crud.load_all_rows();
 
-await crud.create_new_row("item", "quantity", "unit");
+await crud.create_new_row("", "", "");
 add_new_button.addEventListener("click", async function () {
   //if there exists some row that is not filled out with item, quantity, and unit, then don't add a new row
   //make unique row id to pass to crud.create_new_row
@@ -35,7 +35,7 @@ add_new_button.addEventListener("click", async function () {
     }
   }
 
-  await crud.create_new_row("item", "quantity", "unit");
+  await crud.create_new_row("", "", "");
 });
 
 //get the add button that was clicked

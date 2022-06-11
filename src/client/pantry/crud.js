@@ -85,7 +85,7 @@ export async function create_new_row(item, quantity, unit) {
   new_row.innerHTML = `
     
     
-        <td><div class="item_name" id ="item-name"><input type="text" id="items-text" value=${item} </div> </td>
+        <td><div class="item_name" id ="item-name"><input type="text" id="items-text" value=${item}> </div> </td>
                                 <td><div class="_Quantity" id="quantity"><input type="text" id="quantity-text" value=${quantity}></div></td>
                                 <td>
                                   <div class="dropdown" >
