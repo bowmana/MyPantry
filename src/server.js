@@ -121,3 +121,73 @@ app.get("/list", async (request, response) => {
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+// class RowEntryServer {
+//   constructor(dburl) {
+//     this.dburl = dburl;
+//     this.app = express();
+//     this.app.use(morgan("dev"));
+//     this.app.use("/client", express.static("client"));
+//   }
+//   async initRoutes() {
+//     const self = this;
+//     this.app.post("/pantry", async (request, response) => {
+//       try {
+//         const { item_name, quantity, units } = request.query;
+//         await self.db.addEntry(item_name, quantity, units);
+//         response.send({ success: "Entry added" });
+//       } catch (e) {
+//         response.send({ error: e.message });
+//       }
+//     });
+//     this.app.get("/read", async (request, response) => {
+//       try {
+//         const { item_name } = request.query;
+//         const entry = await self.db.readEntry(item_name);
+//         response.send(entry);
+//       } catch (e) {
+//         response.send({ error: e.message });
+//       }
+//     });
+//     this.app.put("/update", async (request, response) => {
+//       try {
+//         const { item_name, quantity, units } = request.body;
+//         await self.db.updateEntry(item_name, quantity, units);
+//         response.send({ success: "Entry updated" });
+//       } catch (e) {
+//         response.send({ error: e.message });
+//       }
+//     });
+//     this.app.delete("/delete", async (request, response) => {
+//       try {
+//         const { item_name } = request.query;
+//         await self.db.deleteEntry(item_name);
+//         response.send({ success: "Entry deleted" });
+//       } catch (e) {
+//         response.send({ error: e.message });
+//       }
+//     });
+//     this.app.get("/list", async (request, response) => {
+//       try {
+//         const entries = await self.db.listEntries();
+//         response.send(entries);
+//       } catch (e) {
+//         response.send({ error: e.message });
+//       }
+//     });
+//   }
+//   async initDb() {
+//     this.db = new RowEntryDatabase(this.dburl);
+//     await this.db.connect();
+//   }
+//   async start() {
+//     await this.initDb();
+//     await this.initRoutes();
+//     const port = process.env.PORT || 3000;
+//     this.app.listen(port, () => {
+//       console.log(`Server listening on port ${port}!`);
+//     });
+//   }
+// }
+// const server = new RowEntryServer(process.env.DATABASE_URI);
+// server.start();
