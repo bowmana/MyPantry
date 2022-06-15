@@ -6,7 +6,7 @@
   
   "type": "module",
   
-  "main": "server.js",
+  "main": "src/server.js",
   
   "dependencies": {
   
@@ -28,7 +28,7 @@
   "morgan": "^1.10.0",
   
     
-  "node": "^16.15.1"
+  "node": ">=12.0.0"
   
   },
   
@@ -41,11 +41,12 @@
   
   "scripts": {
   
-    
+    "build": "webpack --config webpack.config.js",
   "deploy": "copyfiles src/*.js src/.env package*.json deploy",
   
     
-  "start": "node src/server.js"
+  "start": "node src/server.js",
+  "custom": "node src/clog.js"
   
   }
 }

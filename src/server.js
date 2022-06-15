@@ -89,7 +89,7 @@ const port = process.env.PORT || 3000;
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/client", express.static("client"));
+app.use("/client", express.static("./src/client"));
 
 app.post("/pantry", async (request, response) => {
   const { item_name, quantity, units } = request.query;
